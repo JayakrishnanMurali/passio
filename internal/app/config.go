@@ -87,7 +87,7 @@ func loadConfig() (*Config, error) {
 func (c *Config) Save() error {
 	// Create config directory if it doesn't exist
 	configDir := filepath.Dir(c.ConfigPath)
-	if err := os.Mkdir(configDir, 0700); err != nil {
+	if err := os.MkdirAll(configDir, 0700); err != nil {
 		return fmt.Errorf("failed to create config directory: %w", err)
 	}
 

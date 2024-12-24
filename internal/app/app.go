@@ -66,6 +66,7 @@ func (a *App) Unlock(masterPassword string) error {
 
 	a.isLocked = false
 	a.lastActivity = time.Now()
+
 	return nil
 }
 
