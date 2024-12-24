@@ -68,7 +68,7 @@ By default, generates a single password with all character types enabled.`,
 	cmd.Flags().BoolVarP(&lowercase, "lowercase", "w", true, "Include lowercase letters")
 	cmd.Flags().BoolVar(&noAmbiguous, "no-ambiguous", false, "Exclude ambiguous characters (1/l, 0/O, etc.)")
 	cmd.Flags().BoolVarP(&copy, "copy", "c", false, "Copy first generated password to clipboard")
-	cmd.Flags().IntVarP(&count, "count", "n", 1, "Number of passwords to generate")
+	cmd.Flags().IntVarP(&count, "count", "t", 1, "Number of passwords to generate")
 
 	return cmd
 }
