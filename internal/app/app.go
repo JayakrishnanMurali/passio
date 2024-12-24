@@ -95,7 +95,7 @@ func (a *App) CheckAutoLock() {
 	}
 }
 
-func (a *App) DecryptMasterPassword(encryptedPassword []byte) (string, error) {
+func (a *App) DecryptPassword(encryptedPassword []byte) (string, error) {
 	if a.isLocked {
 		return "", errors.New("passio is locked")
 	}
@@ -110,7 +110,7 @@ func (a *App) DecryptMasterPassword(encryptedPassword []byte) (string, error) {
 
 func (a *App) EncryptPassword(password string) ([]byte, error) {
 	if a.IsLocked() {
-		return nil, errors.New("password manager is locked")
+		return nil, errors.New("passio is locked")
 	}
 
 	encrypted, err := a.Encryption.Encrypt([]byte(password), a.Config.MasterHash)
